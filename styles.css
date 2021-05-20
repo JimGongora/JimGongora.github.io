@@ -24,6 +24,7 @@
 
 
 
+
 body{
 	/* Setting default text color, background and a font stack */
 	color:#FFFFFF;
@@ -43,7 +44,16 @@ img {
 a{
 	border:1px solid red;
 font-size:1vw;	
+display:flex;/*CSS3*/
+  align-items:center;/*Vertical align*/
+  justify-content:center;
+
 }
+
+
+
+
+
 .riser {
 	border:1px solid blue; 
 }
