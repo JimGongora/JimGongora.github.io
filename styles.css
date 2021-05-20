@@ -41,7 +41,8 @@ img {
  
 }
 a{
-	border:1px solid red; 
+	border:1px solid red;
+font-size:1vw;	
 }
 .riser {
 	border:1px solid blue; 
@@ -61,7 +62,7 @@ a{
 /* The actual popup */
 .popup .popuptext {
   visibility: hidden;
-  width: 160px;
+  width: 10vw;
   background-color: #555;
   color: #fff;
   text-align: center;
@@ -72,6 +73,7 @@ a{
 bottom: 0%;
   left: 0%;
   margin-left: 2vw;
+  font-size:1vw;	
 }
 
 /* Popup arrow */
