@@ -72,7 +72,7 @@ display:flex;/*CSS3*/
 /* The actual popup */
 .popup .popuptext {
   visibility: hidden;
-  width: 10vw;
+  width: 20vw;
   background-color: #555;
   color: #fff;
   text-align: center;
@@ -126,7 +126,7 @@ bottom: 0%;
 
   -webkit-animation: fadeIn 1s;
   animation-name: blinking;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   animation-iteration-count: 100;
 }
 @keyframes blinking {
