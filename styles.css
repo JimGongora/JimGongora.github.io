@@ -121,9 +121,16 @@ bottom: 0%;
 
 
 .add-outline {
-  border: 4px solid red;
-  color: red;
+  border: 4px solid;
+  color: black;
 
   -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
+  animation-name: blinking;
+  animation-duration: 1s;
+  animation-iteration-count: 100;
+}
+@keyframes blinking {
+  50% {
+    border-color: red;
+  }
 }
