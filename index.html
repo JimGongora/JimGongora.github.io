@@ -1,0 +1,156 @@
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>jquery.panzoom example</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script type="text/javascript" src="/js/lib/dummy.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.panzoom/3.2.2/jquery.panzoom.js"></script>
+
+  <style id="compiled-css" type="text/css">
+      .image-content {
+  border: solid 3px black;
+  width: 100%;
+  background-color: #FFFFFF;
+  height: 600px;
+}
+
+.panzoom {
+  height: 100%;
+}
+
+.image-container {
+  border: solid 1px red;
+}
+
+.controls {
+  margin-bottom: 15px;
+}
+
+
+iframe {
+  /* Set the width of the iframe the size you want to transform it FROM */
+  width: 100%;
+  height: 100%;
+  /* apply the transform */
+  -webkit-transform:scale(0.25);
+  -moz-transform:scale(0.25);
+  -o-transform:scale(0.25);
+  transform:scale(0.25);
+  /* position it, as if it was the original size */
+  position: absolute;
+  left: -400px;
+  top: -200px;
+}
+    /* EOS */
+  </style>
+
+  <script id="insert"></script>
+
+
+    <script src="/js/stringify.js?783fa75cdd7744d02443ffbd2c3fcc22be2dec5a" charset="utf-8"></script>
+   
+</head>
+<body>
+    <div class="controls">
+  <input class="detailsButton" type="button" value="Details">
+  <input class="resetButton" type="button" value="Reset">
+  <input class="panButton" type="button" value="Pan">
+  <input class="zoomButton" type="button" value="Zoom">
+</div>
+
+<div class="image-content" style="overflow: hidden; position: relative;">
+  <div class="panzoom" style="transform: none; transform-origin: 50% 50%; cursor: move;">
+    <iframe class="image-container" src="main.php" ></iframe>
+  </div>
+</div>
+
+    <script type="text/javascript">//<![CDATA[
+
+
+$(function() {
+
+  // setup panzoom
+  var $panzoom = $('.panzoom').panzoom({});
+  
+  function getDetails() {
+    var $el = $('.iframe-container').first();
+    var pos = $el.position();
+
+    return {
+      height: $el.height(),
+      width: $el.width(),
+      x: pos.left,
+      y: pos.top
+    };
+  }
+
+  // logs the <img> position details to the console
+  $('.detailsButton').click(function(e) {
+    console.log(getDetails());
+  });
+
+  $('.resetButton').click(function(e) {
+    $('.panzoom').panzoom('pan', 0, 0);
+    $('.panzoom').panzoom('zoom', 1);
+  });
+
+  $('.panButton').click(function(e) {
+    $('.panzoom').panzoom('pan', 200, 200);
+  });
+
+  $('.zoomButton').click(function(e) {
+    var deets = getDetails();
+
+    $('.panzoom')
+      .panzoom('zoom', 2)
+      .panzoom('pan', 200, 200);
+  });
+  
+
+});
+
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "sdok6rjp"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+    <script>
+      let allLines = []
+
+      window.addEventListener("message", (message) => {
+        if (message.data.console){
+          let insert = document.querySelector("#insert")
+          allLines.push(message.data.console.payload)
+          insert.innerHTML = allLines.join(";\r")
+
+          let result = eval.call(null, message.data.console.payload)
+          if (result !== undefined){
+            console.log(result)
+          }
+        }
+      })
+    </script>
+
+
+
+</body></html>
