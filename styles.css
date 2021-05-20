@@ -41,7 +41,7 @@ img {
   text-align: center;
  
 }
-a{
+.image{
 	border:1px solid red;
 font-size:1vw;	
 display:flex;/*CSS3*/
