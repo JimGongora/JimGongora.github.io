@@ -28,8 +28,8 @@ function t308() {
 <div id="wrapper">
   <img src="img/R3.svg" />
 <a class="image" title="301" style="position: absolute; left: 10.17%; top: 48.75%; width: 12.92%; height: 10.5%; z-index: 2;"><div class="popup" onclick="myFunction()">301 - Fully Booked
-  <span class="popuptext" id="myPopup" >A Simple Popup!</span>
-</div></a>
+</div>
+
 <a class="image" title="302" style="position: absolute; left: 25%; top: 51.63%; width: 2%; height: 5.13%; z-index: 2;"></a>
 <a class="image" title="303" style="position: absolute; left: 23.17%; top: 49%; width: 3.83%; height: 2.5%; z-index: 2;"></a>
 <a class="image" title="304" style="position: absolute; left: 23.08%; top: 45.5%; width: 3.83%; height: 3.5%; z-index: 2;"></a>
@@ -39,19 +39,25 @@ function t308() {
 <a class="image" title="309b" style="position: absolute; left: 39.92%; top: 54.63%; width: 1.67%; height: 5%; z-index: 2;"></a>
 <a class="image" title="309c" style="position: absolute; left: 41.58%; top: 54.63%; width: 1.67%; height: 5%; z-index: 2;"></a>
 <a class="image" title="309d" style="position: absolute; left: 43.25%; top: 56%; width: 3.25%; height: 3.63%; z-index: 2;"></a>
-<a class="image" title="310" style="position: absolute; left: 46.5%; top: 57.13%; width: 4.42%; height: 2.5%; z-index: 2;"></a>
-
+<a class="image" title="310" style="position: absolute; left: 46.5%; top: 57.13%; width: 4.42%; height: 2.5%; z-index: 2;">
+<a class="riser" id="riser2" title="R2H2"  style="position: absolute; left: 48.08%; top: 52.25%; width: 1.67%; height: 2.5%; z-index: 2;"><div class="popup">
+  <span class="popuptext" id="myPopup">A Simple Popup!</span>
+</div></a></a>
   
 </div>
 
 
 
+
 <script>
-// When the user clicks on div, open the popup
 function myFunction() {
+
   var popup = document.getElementById("myPopup");
   popup.classList.toggle("show");
+  riser2.classList.toggle('add-outline');
 }
+
+
 </script>
 
 </body>
